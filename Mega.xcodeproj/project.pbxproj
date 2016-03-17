@@ -7,8 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AC6483D21C9AF82E003897E7 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC6483D11C9AF82E003897E7 /* Constants.swift */; };
 		AC82D97F1C8F364300F4E85F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC82D97E1C8F364300F4E85F /* AppDelegate.swift */; };
-		AC82D9811C8F364300F4E85F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC82D9801C8F364300F4E85F /* ViewController.swift */; };
+		AC82D9811C8F364300F4E85F /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC82D9801C8F364300F4E85F /* LoginViewController.swift */; };
 		AC82D9841C8F364300F4E85F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AC82D9821C8F364300F4E85F /* Main.storyboard */; };
 		AC82D9861C8F364300F4E85F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AC82D9851C8F364300F4E85F /* Assets.xcassets */; };
 		AC82D9891C8F364300F4E85F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AC82D9871C8F364300F4E85F /* LaunchScreen.storyboard */; };
@@ -34,9 +35,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		AC6483D11C9AF82E003897E7 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		AC82D97B1C8F364300F4E85F /* Mega.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Mega.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AC82D97E1C8F364300F4E85F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		AC82D9801C8F364300F4E85F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		AC82D9801C8F364300F4E85F /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		AC82D9831C8F364300F4E85F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		AC82D9851C8F364300F4E85F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AC82D9881C8F364300F4E85F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -98,7 +100,8 @@
 			isa = PBXGroup;
 			children = (
 				AC82D97E1C8F364300F4E85F /* AppDelegate.swift */,
-				AC82D9801C8F364300F4E85F /* ViewController.swift */,
+				AC6483D11C9AF82E003897E7 /* Constants.swift */,
+				AC82D9801C8F364300F4E85F /* LoginViewController.swift */,
 				AC82D9821C8F364300F4E85F /* Main.storyboard */,
 				AC82D9851C8F364300F4E85F /* Assets.xcassets */,
 				AC82D9871C8F364300F4E85F /* LaunchScreen.storyboard */,
@@ -256,8 +259,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AC82D9811C8F364300F4E85F /* ViewController.swift in Sources */,
+				AC82D9811C8F364300F4E85F /* LoginViewController.swift in Sources */,
 				AC82D97F1C8F364300F4E85F /* AppDelegate.swift in Sources */,
+				AC6483D21C9AF82E003897E7 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -482,6 +486,7 @@
 				AC82D9A51C8F364300F4E85F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		AC82D9A61C8F364300F4E85F /* Build configuration list for PBXNativeTarget "MegaTests" */ = {
 			isa = XCConfigurationList;
@@ -490,6 +495,7 @@
 				AC82D9A81C8F364300F4E85F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		AC82D9A91C8F364300F4E85F /* Build configuration list for PBXNativeTarget "MegaUITests" */ = {
 			isa = XCConfigurationList;
@@ -498,6 +504,7 @@
 				AC82D9AB1C8F364300F4E85F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
