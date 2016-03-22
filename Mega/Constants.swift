@@ -7,11 +7,15 @@
 //
 
 import Foundation
+import UIKit
+
+//DISPLAY INFO
+let kDefaultFontSize: CGFloat = 16.0
 
 //SERVER INFO
 let kURLHeader = "http://www.latenightdesigns.com/mega/"
-let kURLLogin = "login.php"
-
+let kURLLogin = kURLHeader + "login.php"
+let kTimeToNextWeeklyWinner = kURLHeader + "countdown.php"
 
 
 //IMAGES
