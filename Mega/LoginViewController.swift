@@ -41,7 +41,7 @@ class LoginViewController: SuperViewController {
         let logoView: UIImageView = self.addUIImage(self.view, x: (width / 2) - (imageWidth / 2), y: 50, width: imageWidth, height: imageHeight, filepath: kLandingLogo)
         logoView.addGestureRecognizer(launchGestureRecognizer)
         
-        //Email and Login Text Fields
+        //Email and Password Text Fields
         let emailView: UIView = self.addUIView(self.view, x: (width / 2) - (textFieldWidth / 2), y: 240, width: textFieldWidth, height: 60, backgroundRed: 255.0, backgroundGreen: 255.0, backgroundBlue: 255.0, transparency: 255.0, roundedWidth: 40.0, roundedHeight: 40.0)
         emailTextField = self.addUITextField(emailView, x: 20, y: 0, width: emailView.frame.size.width - 20, height: emailView.frame.size.height, placeholderText: "EMAIL")
         
@@ -82,7 +82,7 @@ class LoginViewController: SuperViewController {
     }
     
     func goToForgotPassword() {
-        
+        self.segueToNewViewController(kToForgotPassword, sender: self)
     }
     
     func backgroundTapped() {
