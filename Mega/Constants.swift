@@ -18,6 +18,7 @@ let kURLLogin = kURLHeader + "login.php"
 let kURLTimeToNextWeeklyWinner = kURLHeader + "countdown.php"
 
 //SEGUE NAMES
+let kToLaunch = "toLaunch"
 let kToLogin = "toLogin"
 let kToRegister = "toRegister"
 let kToForgotPassword = "toForgotPassword"

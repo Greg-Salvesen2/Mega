@@ -20,10 +20,10 @@ class LoginViewController: SuperViewController {
         
         self.view.addBackground(kLoginBackground)
         
-        let backgroundGestureRecognizer = UITapGestureRecognizer(target: self, action: "backgroundTapped")
-        let loginGestureRecognizer = UITapGestureRecognizer(target: self, action: "loginPressed")
-        let forgotGestureRecognizer = UITapGestureRecognizer(target: self, action: "goToForgotPassword")
-        let launchGestureRecognizer = UITapGestureRecognizer(target: self, action: "goToLaunch")
+        let backgroundGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(LoginViewController.backgroundTapped))
+        let loginGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(LoginViewController.loginPressed))
+        let forgotGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(LoginViewController.goToForgotPassword))
+        let launchGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(LoginViewController.goToLaunch))
         
         self.view.addGestureRecognizer(backgroundGestureRecognizer)
         
@@ -38,7 +38,8 @@ class LoginViewController: SuperViewController {
         
         
         //Logo
-        let logoView: UIImageView = self.addUIImage(self.view, x: (width / 2) - (imageWidth / 2), y: 50, width: imageWidth, height: imageHeight, filepath: kLandingLogo)
+        let logoView: UIView = self.addUIView(self.view, x: (width / 2) - (imageWidth / 2), y: 50, width: imageWidth, height: imageHeight, backgroundRed: 0.0, backgroundGreen: 0.0, backgroundBlue: 0.0, transparency: 0.0, roundedWidth: 0, roundedHeight: 0)
+        self.addUIImage(logoView, x: 0, y: 0, width: logoView.frame.size.width, height: logoView.frame.size.height, filepath: kLandingLogo)
         logoView.addGestureRecognizer(launchGestureRecognizer)
         
         //Email and Password Text Fields
@@ -88,6 +89,11 @@ class LoginViewController: SuperViewController {
     func backgroundTapped() {
         emailTextField.resignFirstResponder()
         passwordTextField.resignFirstResponder()
+    }
+    
+    func goToLaunch() {
+        print("Hello")
+        self.segueToNewViewController(kToLaunch, sender: self)
     }
 
 

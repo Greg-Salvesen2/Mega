@@ -10,4 +10,8 @@ import UIKit
 
 class RegisterViewController: SuperViewController {
     
+    override func registerViewController() {
+        
+    }
+    
 }
