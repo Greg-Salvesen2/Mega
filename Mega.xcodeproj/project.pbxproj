@@ -7,6 +7,24 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AC4F7EF71CA81AFF00D05739 /* LaunchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC4F7EF61CA81AFF00D05739 /* LaunchViewController.swift */; };
+		AC4F7EF91CA81B5600D05739 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC4F7EF81CA81B5600D05739 /* RegisterViewController.swift */; };
+		AC4F7EFE1CA81C1200D05739 /* ForgotPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC4F7EFD1CA81C1200D05739 /* ForgotPasswordViewController.swift */; };
+		AC4F7F001CA81C5C00D05739 /* ForgotPasswordConfirmViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC4F7EFF1CA81C5C00D05739 /* ForgotPasswordConfirmViewController.swift */; };
+		AC4F7F031CA81CC000D05739 /* CarListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC4F7F021CA81CC000D05739 /* CarListViewController.swift */; };
+		AC4F7F051CA81CD200D05739 /* CarSelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC4F7F041CA81CD200D05739 /* CarSelectViewController.swift */; };
+		AC4F7F091CA81CFE00D05739 /* CarSelectTicketsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC4F7F081CA81CFE00D05739 /* CarSelectTicketsViewController.swift */; };
+		AC4F7F0C1CA81D2A00D05739 /* CheckoutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC4F7F0B1CA81D2A00D05739 /* CheckoutViewController.swift */; };
+		AC4F7F0E1CA81D3B00D05739 /* AddCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC4F7F0D1CA81D3B00D05739 /* AddCardViewController.swift */; };
+		AC4F7F111CA81D5E00D05739 /* FilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC4F7F101CA81D5E00D05739 /* FilterViewController.swift */; };
+		AC4F7F141CA81D9500D05739 /* MyBagViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC4F7F131CA81D9500D05739 /* MyBagViewController.swift */; };
+		AC4F7F161CA81DA800D05739 /* MyTicketsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC4F7F151CA81DA800D05739 /* MyTicketsViewController.swift */; };
+		AC4F7F1A1CA81E0E00D05739 /* SpotTheBallViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC4F7F191CA81E0E00D05739 /* SpotTheBallViewController.swift */; };
+		AC4F7F1D1CA81E5400D05739 /* HowItWorksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC4F7F1C1CA81E5400D05739 /* HowItWorksViewController.swift */; };
+		AC4F7F1F1CA81E5D00D05739 /* FAQViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC4F7F1E1CA81E5D00D05739 /* FAQViewController.swift */; };
+		AC4F7F211CA81E6C00D05739 /* PastWinnersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC4F7F201CA81E6C00D05739 /* PastWinnersViewController.swift */; };
+		AC4F7F231CA81E8700D05739 /* AboutSpotTheBallViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC4F7F221CA81E8700D05739 /* AboutSpotTheBallViewController.swift */; };
+		AC4F7F261CA844F200D05739 /* SideBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC4F7F251CA844F200D05739 /* SideBarViewController.swift */; };
 		AC55E7791CA1C2BC00C749E5 /* SF Apple Font in Resources */ = {isa = PBXBuildFile; fileRef = AC55E7781CA1C2BC00C749E5 /* SF Apple Font */; };
 		AC6483D21C9AF82E003897E7 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC6483D11C9AF82E003897E7 /* Constants.swift */; };
 		AC6483D41C9B012D003897E7 /* SuperViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC6483D31C9B012D003897E7 /* SuperViewController.swift */; };
@@ -41,6 +59,24 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		AC4F7EF61CA81AFF00D05739 /* LaunchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LaunchViewController.swift; sourceTree = "<group>"; };
+		AC4F7EF81CA81B5600D05739 /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		AC4F7EFD1CA81C1200D05739 /* ForgotPasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewController.swift; sourceTree = "<group>"; };
+		AC4F7EFF1CA81C5C00D05739 /* ForgotPasswordConfirmViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForgotPasswordConfirmViewController.swift; sourceTree = "<group>"; };
+		AC4F7F021CA81CC000D05739 /* CarListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CarListViewController.swift; sourceTree = "<group>"; };
+		AC4F7F041CA81CD200D05739 /* CarSelectViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CarSelectViewController.swift; sourceTree = "<group>"; };
+		AC4F7F081CA81CFE00D05739 /* CarSelectTicketsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CarSelectTicketsViewController.swift; sourceTree = "<group>"; };
+		AC4F7F0B1CA81D2A00D05739 /* CheckoutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CheckoutViewController.swift; sourceTree = "<group>"; };
+		AC4F7F0D1CA81D3B00D05739 /* AddCardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddCardViewController.swift; sourceTree = "<group>"; };
+		AC4F7F101CA81D5E00D05739 /* FilterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilterViewController.swift; sourceTree = "<group>"; };
+		AC4F7F131CA81D9500D05739 /* MyBagViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyBagViewController.swift; sourceTree = "<group>"; };
+		AC4F7F151CA81DA800D05739 /* MyTicketsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyTicketsViewController.swift; sourceTree = "<group>"; };
+		AC4F7F191CA81E0E00D05739 /* SpotTheBallViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpotTheBallViewController.swift; sourceTree = "<group>"; };
+		AC4F7F1C1CA81E5400D05739 /* HowItWorksViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HowItWorksViewController.swift; sourceTree = "<group>"; };
+		AC4F7F1E1CA81E5D00D05739 /* FAQViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FAQViewController.swift; sourceTree = "<group>"; };
+		AC4F7F201CA81E6C00D05739 /* PastWinnersViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PastWinnersViewController.swift; sourceTree = "<group>"; };
+		AC4F7F221CA81E8700D05739 /* AboutSpotTheBallViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutSpotTheBallViewController.swift; sourceTree = "<group>"; };
+		AC4F7F251CA844F200D05739 /* SideBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SideBarViewController.swift; sourceTree = "<group>"; };
 		AC55E7781CA1C2BC00C749E5 /* SF Apple Font */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "SF Apple Font"; sourceTree = "<group>"; };
 		AC6483D11C9AF82E003897E7 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		AC6483D31C9B012D003897E7 /* SuperViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SuperViewController.swift; sourceTree = "<group>"; };
@@ -88,6 +124,96 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		AC4F7EFA1CA81B5C00D05739 /* App Management */ = {
+			isa = PBXGroup;
+			children = (
+				AC82D97E1C8F364300F4E85F /* AppDelegate.swift */,
+				AC6483DC1C9B06A0003897E7 /* UIViewExtension.swift */,
+				AC82D9821C8F364300F4E85F /* Main.storyboard */,
+				AC82D9871C8F364300F4E85F /* LaunchScreen.storyboard */,
+				AC82D9851C8F364300F4E85F /* Assets.xcassets */,
+				AC82D98A1C8F364300F4E85F /* Info.plist */,
+			);
+			name = "App Management";
+			sourceTree = "<group>";
+		};
+		AC4F7EFB1CA81B8100D05739 /* Prelogin Pages */ = {
+			isa = PBXGroup;
+			children = (
+				AC4F7EF61CA81AFF00D05739 /* LaunchViewController.swift */,
+				AC82D9801C8F364300F4E85F /* LoginViewController.swift */,
+				AC4F7EF81CA81B5600D05739 /* RegisterViewController.swift */,
+				AC4F7EFD1CA81C1200D05739 /* ForgotPasswordViewController.swift */,
+				AC4F7EFF1CA81C5C00D05739 /* ForgotPasswordConfirmViewController.swift */,
+			);
+			name = "Prelogin Pages";
+			sourceTree = "<group>";
+		};
+		AC4F7EFC1CA81B9F00D05739 /* Helper Classes */ = {
+			isa = PBXGroup;
+			children = (
+				AC6483D11C9AF82E003897E7 /* Constants.swift */,
+				AC6483D31C9B012D003897E7 /* SuperViewController.swift */,
+			);
+			name = "Helper Classes";
+			sourceTree = "<group>";
+		};
+		AC4F7F011CA81C9300D05739 /* Car Selection */ = {
+			isa = PBXGroup;
+			children = (
+				AC4F7F101CA81D5E00D05739 /* FilterViewController.swift */,
+				AC4F7F021CA81CC000D05739 /* CarListViewController.swift */,
+				AC4F7F041CA81CD200D05739 /* CarSelectViewController.swift */,
+				AC4F7F081CA81CFE00D05739 /* CarSelectTicketsViewController.swift */,
+			);
+			name = "Car Selection";
+			sourceTree = "<group>";
+		};
+		AC4F7F0A1CA81D0C00D05739 /* Payment Process */ = {
+			isa = PBXGroup;
+			children = (
+				AC4F7F0B1CA81D2A00D05739 /* CheckoutViewController.swift */,
+				AC4F7F0D1CA81D3B00D05739 /* AddCardViewController.swift */,
+			);
+			name = "Payment Process";
+			sourceTree = "<group>";
+		};
+		AC4F7F121CA81D7A00D05739 /* User Data */ = {
+			isa = PBXGroup;
+			children = (
+				AC4F7F131CA81D9500D05739 /* MyBagViewController.swift */,
+				AC4F7F151CA81DA800D05739 /* MyTicketsViewController.swift */,
+			);
+			name = "User Data";
+			sourceTree = "<group>";
+		};
+		AC4F7F171CA81DCA00D05739 /* Spot the Ball */ = {
+			isa = PBXGroup;
+			children = (
+				AC4F7F221CA81E8700D05739 /* AboutSpotTheBallViewController.swift */,
+				AC4F7F191CA81E0E00D05739 /* SpotTheBallViewController.swift */,
+			);
+			name = "Spot the Ball";
+			sourceTree = "<group>";
+		};
+		AC4F7F1B1CA81E3600D05739 /* Information */ = {
+			isa = PBXGroup;
+			children = (
+				AC4F7F1C1CA81E5400D05739 /* HowItWorksViewController.swift */,
+				AC4F7F1E1CA81E5D00D05739 /* FAQViewController.swift */,
+				AC4F7F201CA81E6C00D05739 /* PastWinnersViewController.swift */,
+			);
+			name = Information;
+			sourceTree = "<group>";
+		};
+		AC4F7F241CA844DA00D05739 /* Sidebar */ = {
+			isa = PBXGroup;
+			children = (
+				AC4F7F251CA844F200D05739 /* SideBarViewController.swift */,
+			);
+			name = Sidebar;
+			sourceTree = "<group>";
+		};
 		AC6483DB1C9B01F2003897E7 /* Assets */ = {
 			isa = PBXGroup;
 			children = (
@@ -123,15 +249,15 @@
 		AC82D97D1C8F364300F4E85F /* Mega */ = {
 			isa = PBXGroup;
 			children = (
-				AC6483DC1C9B06A0003897E7 /* UIViewExtension.swift */,
-				AC82D97E1C8F364300F4E85F /* AppDelegate.swift */,
-				AC6483D11C9AF82E003897E7 /* Constants.swift */,
-				AC82D9801C8F364300F4E85F /* LoginViewController.swift */,
-				AC6483D31C9B012D003897E7 /* SuperViewController.swift */,
-				AC82D9821C8F364300F4E85F /* Main.storyboard */,
-				AC82D9851C8F364300F4E85F /* Assets.xcassets */,
-				AC82D9871C8F364300F4E85F /* LaunchScreen.storyboard */,
-				AC82D98A1C8F364300F4E85F /* Info.plist */,
+				AC4F7EFA1CA81B5C00D05739 /* App Management */,
+				AC4F7EFC1CA81B9F00D05739 /* Helper Classes */,
+				AC4F7EFB1CA81B8100D05739 /* Prelogin Pages */,
+				AC4F7F011CA81C9300D05739 /* Car Selection */,
+				AC4F7F0A1CA81D0C00D05739 /* Payment Process */,
+				AC4F7F121CA81D7A00D05739 /* User Data */,
+				AC4F7F171CA81DCA00D05739 /* Spot the Ball */,
+				AC4F7F1B1CA81E3600D05739 /* Information */,
+				AC4F7F241CA844DA00D05739 /* Sidebar */,
 			);
 			path = Mega;
 			sourceTree = "<group>";
@@ -289,11 +415,29 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AC4F7F211CA81E6C00D05739 /* PastWinnersViewController.swift in Sources */,
+				AC4F7F0E1CA81D3B00D05739 /* AddCardViewController.swift in Sources */,
+				AC4F7F051CA81CD200D05739 /* CarSelectViewController.swift in Sources */,
+				AC4F7F0C1CA81D2A00D05739 /* CheckoutViewController.swift in Sources */,
+				AC4F7F141CA81D9500D05739 /* MyBagViewController.swift in Sources */,
+				AC4F7EFE1CA81C1200D05739 /* ForgotPasswordViewController.swift in Sources */,
+				AC4F7F031CA81CC000D05739 /* CarListViewController.swift in Sources */,
+				AC4F7F231CA81E8700D05739 /* AboutSpotTheBallViewController.swift in Sources */,
 				AC6483DD1C9B06A0003897E7 /* UIViewExtension.swift in Sources */,
+				AC4F7EF71CA81AFF00D05739 /* LaunchViewController.swift in Sources */,
+				AC4F7EF91CA81B5600D05739 /* RegisterViewController.swift in Sources */,
 				AC82D9811C8F364300F4E85F /* LoginViewController.swift in Sources */,
+				AC4F7F111CA81D5E00D05739 /* FilterViewController.swift in Sources */,
+				AC4F7F091CA81CFE00D05739 /* CarSelectTicketsViewController.swift in Sources */,
+				AC4F7F161CA81DA800D05739 /* MyTicketsViewController.swift in Sources */,
+				AC4F7F1F1CA81E5D00D05739 /* FAQViewController.swift in Sources */,
+				AC4F7F1A1CA81E0E00D05739 /* SpotTheBallViewController.swift in Sources */,
 				AC82D97F1C8F364300F4E85F /* AppDelegate.swift in Sources */,
+				AC4F7F1D1CA81E5400D05739 /* HowItWorksViewController.swift in Sources */,
+				AC4F7F261CA844F200D05739 /* SideBarViewController.swift in Sources */,
 				AC6483D41C9B012D003897E7 /* SuperViewController.swift in Sources */,
 				AC6483D21C9AF82E003897E7 /* Constants.swift in Sources */,
+				AC4F7F001CA81C5C00D05739 /* ForgotPasswordConfirmViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

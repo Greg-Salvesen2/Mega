@@ -15,7 +15,26 @@ let kDefaultFontSize: CGFloat = 16.0
 //SERVER INFO
 let kURLHeader = "http://www.latenightdesigns.com/mega/"
 let kURLLogin = kURLHeader + "login.php"
-let kTimeToNextWeeklyWinner = kURLHeader + "countdown.php"
+let kURLTimeToNextWeeklyWinner = kURLHeader + "countdown.php"
+
+//SEGUE NAMES
+let kToLogin = "toLogin"
+let kToRegister = "toRegister"
+let kToForgotPassword = "toForgotPassword"
+let kToForgotPasswordConfirm = "toForgotPasswordConfirm"
+let kToCarList = "toCarList"
+let kToFilter = "toFilter"
+let kToCarSelect = "toCarSelect"
+let kToBuyCarTickets = "toBuyCarTickets"
+let kToCheckout = "toCheckout"
+let kToAddCard = "toAddCard"
+let kToHowItWorks = "toHowItWorks"
+let kToPastWinners = "toPastWinners"
+let kToFAQ = "toFAQ"
+let kToMyTickets = "toMyTickets"
+let kToSpotTheBall = "toSpotTheBall"
+let kToAboutSpotTheBall = "toAboutSpotTheBall"
+let kToMyBag = "toMyBag"
 
 
 //IMAGES

@@ -51,6 +51,10 @@ class SuperViewController: UIViewController {
         return textField
     }
     
+    func segueToNewViewController(controllerIdentifier: String, sender: AnyObject) {
+        self.performSegueWithIdentifier(controllerIdentifier, sender: sender)
+    }
+    
     func addUILabel(curView:UIView, x: CGFloat, y: CGFloat, width: CGFloat, height: CGFloat, labelText: String, red: CGFloat, green: CGFloat, blue: CGFloat, centered:Bool, fontSize: CGFloat) -> UILabel {
         
         let label:UILabel = UILabel(frame: CGRectMake(x, y, width, height))
@@ -131,7 +135,7 @@ class SuperViewController: UIViewController {
     }
     
     func getTimeInSecondsToNextWeeklyWinner(completion: ((NSString: NSString?) -> Void)) {
-        let url = NSURL(string: kTimeToNextWeeklyWinner)
+        let url = NSURL(string: kURLTimeToNextWeeklyWinner)
         let request = NSMutableURLRequest(URL: url!)
         let session = NSURLSession.sharedSession()
         request.HTTPMethod = "POST"
