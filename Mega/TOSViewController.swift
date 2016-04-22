@@ -1,18 +1,18 @@
 //
-//  LaunchViewController.swift
+//  TOSViewController.swift
 //  Mega
 //
-//  Created by Greg Salvesen on 3/27/16.
+//  Created by Greg Salvesen on 4/20/16.
 //  Copyright © 2016 Mega. All rights reserved.
 //
 
 import UIKit
 
 /*
- Class Name: LaunchViewController
+ Class Name: TOSViewController
  Purpose: This ViewController is the initial view that appears when the user launches the app. This view allows the user to decide whether they want to go to the Register page or to the Login page. This view also queries the countdown script, in order to display the time to the next weekly drawing.
-*/
-class LaunchViewController: SuperViewController {
+ */
+class TOSViewController: SuperViewController {
     
     /*
      Name: viewDidLoad
@@ -20,7 +20,7 @@ class LaunchViewController: SuperViewController {
      Inputs: None
      Outputs: None
      Values Modified: None
-    */
+     */
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -67,7 +67,7 @@ class LaunchViewController: SuperViewController {
      Inputs: None
      Outputs: None
      Values Modified: None
-    */
+     */
     override func viewDidAppear(animated: Bool) {
         let defaults = NSUserDefaults.standardUserDefaults()
         
@@ -85,7 +85,7 @@ class LaunchViewController: SuperViewController {
      Inputs: None
      Outputs: None
      Values Modified: None
-    */
+     */
     func goToLogin() {
         self.segueToNewViewController(kToLogin, sender: self)
     }
@@ -96,9 +96,9 @@ class LaunchViewController: SuperViewController {
      Inputs: None
      Outputs: None
      Values Modified: None
-    */
+     */
     func goToRegister() {
         self.segueToNewViewController(kToRegister, sender: self)
     }
-
+    
 }

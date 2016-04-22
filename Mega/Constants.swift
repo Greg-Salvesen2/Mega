@@ -16,9 +16,11 @@ let kDefaultFontSize: CGFloat = 16.0
 let kURLHeader = "http://www.latenightdesigns.com/mega/"
 let kURLLogin = kURLHeader + "login.php"
 let kURLTimeToNextWeeklyWinner = kURLHeader + "countdown.php"
+let kURLRegister = kURLHeader + "register.php"
 
 //SEGUE NAMES
 let kToLaunch = "toLaunch"
+let kToTOS = "toTOS"
 let kToLogin = "toLogin"
 let kToRegister = "toRegister"
 let kToForgotPassword = "toForgotPassword"

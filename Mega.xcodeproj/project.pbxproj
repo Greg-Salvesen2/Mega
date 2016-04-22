@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AC15E8141CC2D3C3003D7C6E /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AC15E8131CC2D3C3003D7C6E /* Launch Screen.storyboard */; };
 		AC4F7EF71CA81AFF00D05739 /* LaunchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC4F7EF61CA81AFF00D05739 /* LaunchViewController.swift */; };
 		AC4F7EF91CA81B5600D05739 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC4F7EF81CA81B5600D05739 /* RegisterViewController.swift */; };
 		AC4F7EFE1CA81C1200D05739 /* ForgotPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC4F7EFD1CA81C1200D05739 /* ForgotPasswordViewController.swift */; };
@@ -36,9 +37,12 @@
 		AC82D9811C8F364300F4E85F /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC82D9801C8F364300F4E85F /* LoginViewController.swift */; };
 		AC82D9841C8F364300F4E85F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AC82D9821C8F364300F4E85F /* Main.storyboard */; };
 		AC82D9861C8F364300F4E85F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AC82D9851C8F364300F4E85F /* Assets.xcassets */; };
-		AC82D9891C8F364300F4E85F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AC82D9871C8F364300F4E85F /* LaunchScreen.storyboard */; };
 		AC82D9941C8F364300F4E85F /* MegaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC82D9931C8F364300F4E85F /* MegaTests.swift */; };
 		AC82D99F1C8F364300F4E85F /* MegaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC82D99E1C8F364300F4E85F /* MegaUITests.swift */; };
+		AC8D717C1CC73E15007AA7BD /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AC8D717B1CC73E15007AA7BD /* Images.xcassets */; };
+		AC8D717F1CC74050007AA7BD /* LaunchScreen.png in Resources */ = {isa = PBXBuildFile; fileRef = AC8D717D1CC74050007AA7BD /* LaunchScreen.png */; };
+		AC8D71801CC74050007AA7BD /* LaunchScreenLogo.png in Resources */ = {isa = PBXBuildFile; fileRef = AC8D717E1CC74050007AA7BD /* LaunchScreenLogo.png */; };
+		AC8D71821CC878E0007AA7BD /* TOSViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC8D71811CC878E0007AA7BD /* TOSViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +63,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		AC15E8131CC2D3C3003D7C6E /* Launch Screen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		AC4F7EF61CA81AFF00D05739 /* LaunchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LaunchViewController.swift; sourceTree = "<group>"; };
 		AC4F7EF81CA81B5600D05739 /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		AC4F7EFD1CA81C1200D05739 /* ForgotPasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewController.swift; sourceTree = "<group>"; };
@@ -89,7 +94,6 @@
 		AC82D9801C8F364300F4E85F /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		AC82D9831C8F364300F4E85F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		AC82D9851C8F364300F4E85F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		AC82D9881C8F364300F4E85F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AC82D98A1C8F364300F4E85F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AC82D98F1C8F364300F4E85F /* MegaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MegaTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		AC82D9931C8F364300F4E85F /* MegaTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MegaTests.swift; sourceTree = "<group>"; };
@@ -97,6 +101,10 @@
 		AC82D99A1C8F364300F4E85F /* MegaUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MegaUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		AC82D99E1C8F364300F4E85F /* MegaUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MegaUITests.swift; sourceTree = "<group>"; };
 		AC82D9A01C8F364300F4E85F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AC8D717B1CC73E15007AA7BD /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		AC8D717D1CC74050007AA7BD /* LaunchScreen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LaunchScreen.png; sourceTree = "<group>"; };
+		AC8D717E1CC74050007AA7BD /* LaunchScreenLogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LaunchScreenLogo.png; sourceTree = "<group>"; };
+		AC8D71811CC878E0007AA7BD /* TOSViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TOSViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,13 +132,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		AC15E8171CC68F23003D7C6E /* Launch Screen */ = {
+			isa = PBXGroup;
+			children = (
+				AC8D717D1CC74050007AA7BD /* LaunchScreen.png */,
+				AC8D717E1CC74050007AA7BD /* LaunchScreenLogo.png */,
+			);
+			name = "Launch Screen";
+			sourceTree = "<group>";
+		};
 		AC4F7EFA1CA81B5C00D05739 /* App Management */ = {
 			isa = PBXGroup;
 			children = (
 				AC82D97E1C8F364300F4E85F /* AppDelegate.swift */,
 				AC6483DC1C9B06A0003897E7 /* UIViewExtension.swift */,
 				AC82D9821C8F364300F4E85F /* Main.storyboard */,
-				AC82D9871C8F364300F4E85F /* LaunchScreen.storyboard */,
+				AC15E8131CC2D3C3003D7C6E /* Launch Screen.storyboard */,
 				AC82D9851C8F364300F4E85F /* Assets.xcassets */,
 				AC82D98A1C8F364300F4E85F /* Info.plist */,
 			);
@@ -140,6 +157,7 @@
 		AC4F7EFB1CA81B8100D05739 /* Prelogin Pages */ = {
 			isa = PBXGroup;
 			children = (
+				AC8D71811CC878E0007AA7BD /* TOSViewController.swift */,
 				AC4F7EF61CA81AFF00D05739 /* LaunchViewController.swift */,
 				AC82D9801C8F364300F4E85F /* LoginViewController.swift */,
 				AC4F7EF81CA81B5600D05739 /* RegisterViewController.swift */,
@@ -217,6 +235,7 @@
 		AC6483DB1C9B01F2003897E7 /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				AC15E8171CC68F23003D7C6E /* Launch Screen */,
 				AC55E7781CA1C2BC00C749E5 /* SF Apple Font */,
 				AC6483D51C9B01EA003897E7 /* Assets */,
 				AC6483D61C9B01EA003897E7 /* FlowChart */,
@@ -258,6 +277,7 @@
 				AC4F7F171CA81DCA00D05739 /* Spot the Ball */,
 				AC4F7F1B1CA81E3600D05739 /* Information */,
 				AC4F7F241CA844DA00D05739 /* Sidebar */,
+				AC8D717B1CC73E15007AA7BD /* Images.xcassets */,
 			);
 			path = Mega;
 			sourceTree = "<group>";
@@ -385,12 +405,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				AC55E7791CA1C2BC00C749E5 /* SF Apple Font in Resources */,
-				AC82D9891C8F364300F4E85F /* LaunchScreen.storyboard in Resources */,
+				AC8D71801CC74050007AA7BD /* LaunchScreenLogo.png in Resources */,
+				AC8D717C1CC73E15007AA7BD /* Images.xcassets in Resources */,
 				AC6483D81C9B01EA003897E7 /* Assets in Resources */,
 				AC82D9861C8F364300F4E85F /* Assets.xcassets in Resources */,
 				AC82D9841C8F364300F4E85F /* Main.storyboard in Resources */,
 				AC6483DA1C9B01EA003897E7 /* Screenshots in Resources */,
+				AC8D717F1CC74050007AA7BD /* LaunchScreen.png in Resources */,
 				AC6483D91C9B01EA003897E7 /* FlowChart in Resources */,
+				AC15E8141CC2D3C3003D7C6E /* Launch Screen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -422,6 +445,7 @@
 				AC4F7F141CA81D9500D05739 /* MyBagViewController.swift in Sources */,
 				AC4F7EFE1CA81C1200D05739 /* ForgotPasswordViewController.swift in Sources */,
 				AC4F7F031CA81CC000D05739 /* CarListViewController.swift in Sources */,
+				AC8D71821CC878E0007AA7BD /* TOSViewController.swift in Sources */,
 				AC4F7F231CA81E8700D05739 /* AboutSpotTheBallViewController.swift in Sources */,
 				AC6483DD1C9B06A0003897E7 /* UIViewExtension.swift in Sources */,
 				AC4F7EF71CA81AFF00D05739 /* LaunchViewController.swift in Sources */,
@@ -479,14 +503,6 @@
 				AC82D9831C8F364300F4E85F /* Base */,
 			);
 			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		AC82D9871C8F364300F4E85F /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				AC82D9881C8F364300F4E85F /* Base */,
-			);
-			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -577,6 +593,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
 				INFOPLIST_FILE = Mega/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.mega.Mega;
@@ -588,6 +605,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
 				INFOPLIST_FILE = Mega/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.mega.Mega;

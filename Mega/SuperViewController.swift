@@ -24,38 +24,57 @@ class SuperViewController: UIViewController {
         return image;
     }
     
-    func addUIView(curView:UIView, x: CGFloat, y: CGFloat, width: CGFloat, height: CGFloat, backgroundRed: CGFloat, backgroundGreen: CGFloat, backgroundBlue: CGFloat, transparency: CGFloat, roundedWidth: CGFloat, roundedHeight: CGFloat) -> UIView {
+    func addUIView(curView:UIView, x: CGFloat, y: CGFloat, width: CGFloat, height: CGFloat, backgroundRed: CGFloat = 0.0, backgroundGreen: CGFloat = 0.0, backgroundBlue: CGFloat = 0.0, transparency: CGFloat = 0.0, borderRed: CGFloat = 0.0, borderGreen: CGFloat = 0.0, borderBlue: CGFloat = 0.0, borderTransparency:CGFloat = 0.0, borderWidth: CGFloat = 1.0, rounded: CGFloat = 0.0) -> UIView {
         
         let view: UIView = UIView(frame: CGRectMake(x, y, width, height))
         
         view.backgroundColor = UIColor(red: (backgroundRed / 255.0), green: (backgroundGreen / 255.0), blue: (backgroundBlue / 255.0), alpha: (transparency / 255.0))
         
-        let maskPath = UIBezierPath(roundedRect: view.bounds,byRoundingCorners: .AllCorners, cornerRadii: CGSize(width: roundedWidth, height: roundedHeight))
-        let maskLayer = CAShapeLayer(layer: maskPath)
-        maskLayer.frame = view.bounds
-        maskLayer.path = maskPath.CGPath
-        view.layer.mask = maskLayer
+        view.layer.borderWidth = borderWidth
+        view.layer.borderColor = UIColor(red: (borderRed / 255.0), green: (borderGreen / 255.0), blue: (borderBlue / 255.0), alpha: (borderTransparency / 255.0)).CGColor
+        
+        view.layer.cornerRadius = rounded
         
         curView.addSubview(view)
         
         return view
     }
     
-    func addUITextField(curView:UIView, x: CGFloat, y: CGFloat, width: CGFloat, height: CGFloat, placeholderText: String) -> UITextField {
+    
+    
+    func addUITextField(curView:UIView, x: CGFloat, y: CGFloat, width: CGFloat, height: CGFloat, placeholderText: String = "", centered: Bool = false, isEmail: Bool = false, isNum: Bool = false, isPass: Bool = false) -> UITextField {
         let textField: UITextField = UITextField(frame: CGRectMake(x, y, width, height))
         
         textField.placeholder = placeholderText
+        
+        textField.keyboardAppearance = .Dark
+        
+        if(centered) {
+            textField.textAlignment = .Center
+        }
+        
+        if(isNum) {
+            textField.keyboardType = .NumberPad
+        }
+        
+        if(isEmail) {
+            textField.keyboardType = .EmailAddress
+        }
+        
+        textField.secureTextEntry = isPass
+        
         
         curView.addSubview(textField)
         
         return textField
     }
+
     
     func segueToNewViewController(controllerIdentifier: String, sender: AnyObject) {
         self.performSegueWithIdentifier(controllerIdentifier, sender: sender)
     }
     
-    func addUILabel(curView:UIView, x: CGFloat, y: CGFloat, width: CGFloat, height: CGFloat, labelText: String, red: CGFloat, green: CGFloat, blue: CGFloat, centered:Bool, fontSize: CGFloat) -> UILabel {
+    func addUILabel(curView:UIView, x: CGFloat, y: CGFloat, width: CGFloat, height: CGFloat, labelText: String, red: CGFloat = 0, green: CGFloat = 0, blue: CGFloat = 0, centered:Bool = true, fontSize: CGFloat = 16.0) -> UILabel {
         
         let label:UILabel = UILabel(frame: CGRectMake(x, y, width, height))
         
@@ -76,10 +95,10 @@ class SuperViewController: UIViewController {
     }
     
     func addTimeToNextWeeklyWinner(curView:UIView, x: CGFloat, y: CGFloat, width: CGFloat, height: CGFloat, red: CGFloat, green: CGFloat, blue: CGFloat) {
-        addUILabel(curView, x: x, y: y, width: width, height: 25, labelText: "NEXT WEEKLY WINNER", red: red, green: green, blue: blue, centered: true, fontSize: 20)
         
         getTimeInSecondsToNextWeeklyWinner() {
             time in dispatch_async(dispatch_get_main_queue()) {
+                self.addUILabel(curView, x: x, y: y, width: width, height: 25, labelText: "NEXT WEEKLY WINNER", red: red, green: green, blue: blue, centered: true, fontSize: 20)
                 var timeInt: Int = (time?.integerValue)!
                 var days: Int = 0
                 var hours: Int = 0
@@ -102,7 +121,7 @@ class SuperViewController: UIViewController {
                 self.addUILabel(curView, x: x + 200, y: y + 80, width: 75, height: 25, labelText: "MINUTES", red: 230.0, green: 201.0, blue: 37.0, centered: true, fontSize: 12)
                 self.addUILabel(curView, x: x + 300, y: y + 80, width: 75, height: 25, labelText: "SECONDS", red: 230.0, green: 201.0, blue: 37.0, centered: true, fontSize: 12)
                 
-                NSTimer.scheduledTimerWithTimeInterval(1.0, target: self, selector: Selector("changeTimer"), userInfo: nil, repeats: true)
+                NSTimer.scheduledTimerWithTimeInterval(1.0, target: self, selector: #selector(SuperViewController.changeTimer), userInfo: nil, repeats: true)
             }
         }
 
@@ -142,6 +161,14 @@ class SuperViewController: UIViewController {
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
         request.addValue("application/json", forHTTPHeaderField: "Accept")
         let task = session.dataTaskWithRequest(request, completionHandler: {data, response, error -> Void in
+            guard error == nil else {
+                dispatch_async(dispatch_get_main_queue(), {
+                    let alert = UIAlertController(title: "Unable to complete server connection", message: "Try checking your internet connection, and trying again.", preferredStyle: .Alert)
+                    alert.addAction(UIAlertAction(title: "Okay", style: UIAlertActionStyle.Default, handler: nil))
+                    self.presentViewController(alert, animated: true, completion: nil)
+                })
+                return
+            }
             completion(NSString: NSString(data: data!, encoding: NSUTF8StringEncoding))
         })
         
