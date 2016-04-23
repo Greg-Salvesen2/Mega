@@ -74,22 +74,26 @@ class SuperViewController: UIViewController {
         self.performSegueWithIdentifier(controllerIdentifier, sender: sender)
     }
     
-    func addUILabel(curView:UIView, x: CGFloat, y: CGFloat, width: CGFloat, height: CGFloat, labelText: String, red: CGFloat = 0, green: CGFloat = 0, blue: CGFloat = 0, centered:Bool = true, fontSize: CGFloat = 16.0) -> UILabel {
+    func addUILabel(curView:UIView, x: CGFloat, y: CGFloat, width: CGFloat, height: CGFloat, labelText: String = "", attribLabelText: NSMutableAttributedString? = nil, red: CGFloat = 0, green: CGFloat = 0, blue: CGFloat = 0, centered:Bool = true, fontSize: CGFloat = kDefaultFontSize) -> UILabel {
         
         let label:UILabel = UILabel(frame: CGRectMake(x, y, width, height))
         
         label.textColor = UIColor(red: (red / 255.0), green: (green / 255.0), blue: (blue / 255.0), alpha: 1.0)
         
-        label.text = labelText
+        if(attribLabelText != nil) {
+            label.attributedText = attribLabelText
+        } else {
+            label.text = labelText
+        }
         label.font = UIFont(name: (label.font?.fontName)!, size: fontSize)
         
         if(centered) {
             label.textAlignment = NSTextAlignment.Center
         }
+        label.numberOfLines = 0
+        label.lineBreakMode = NSLineBreakMode.ByWordWrapping
         
         curView.addSubview(label)
-        
-        
         
         return label
     }
@@ -98,7 +102,7 @@ class SuperViewController: UIViewController {
         
         getTimeInSecondsToNextWeeklyWinner() {
             time in dispatch_async(dispatch_get_main_queue()) {
-                self.addUILabel(curView, x: x, y: y, width: width, height: 25, labelText: "NEXT WEEKLY WINNER", red: red, green: green, blue: blue, centered: true, fontSize: 20)
+                self.addUILabel(curView, x: x, y: y, width: width, height: 25, labelText: "NEXT WEEKLY WINNER", red: red, green: green, blue: blue, fontSize: 20)
                 var timeInt: Int = (time?.integerValue)!
                 var days: Int = 0
                 var hours: Int = 0
@@ -111,15 +115,15 @@ class SuperViewController: UIViewController {
                 minutes = timeInt / 60
                 timeInt -= minutes * 60
                 seconds = timeInt
-                self.daysLabel = self.addUILabel(curView, x: x, y: y + 50, width: 75, height: 25, labelText: String(days), red: 230.0, green: 201.0, blue: 37.0, centered: true, fontSize: 30)
-                self.hoursLabel = self.addUILabel(curView, x: x + 100, y: y + 50, width: 75, height: 25, labelText: String(hours), red: 230.0, green: 201.0, blue: 37.0, centered: true, fontSize: 30)
-                self.minutesLabel = self.addUILabel(curView, x: x + 200, y: y + 50, width: 75, height: 25, labelText: String(minutes), red: 230.0, green: 201.0, blue: 37.0, centered: true, fontSize: 30)
-                self.secondsLabel = self.addUILabel(curView, x: x + 300, y: y + 50, width: 75, height: 25, labelText: String(seconds), red: 230.0, green: 201.0, blue: 37.0, centered: true, fontSize: 30)
+                self.daysLabel = self.addUILabel(curView, x: x, y: y + 50, width: 75, height: 25, labelText: String(days), red: 230.0, green: 201.0, blue: 37.0, fontSize: 30)
+                self.hoursLabel = self.addUILabel(curView, x: x + 100, y: y + 50, width: 75, height: 25, labelText: String(hours), red: 230.0, green: 201.0, blue: 37.0, fontSize: 30)
+                self.minutesLabel = self.addUILabel(curView, x: x + 200, y: y + 50, width: 75, height: 25, labelText: String(minutes), red: 230.0, green: 201.0, blue: 37.0, fontSize: 30)
+                self.secondsLabel = self.addUILabel(curView, x: x + 300, y: y + 50, width: 75, height: 25, labelText: String(seconds), red: 230.0, green: 201.0, blue: 37.0, fontSize: 30)
                 
-                self.addUILabel(curView, x: x, y: y + 80, width: 75, height: 25, labelText: "DAYS", red: 230.0, green: 201.0, blue: 37.0, centered: true, fontSize: 12)
-                self.addUILabel(curView, x: x + 100, y: y + 80, width: 75, height: 25, labelText: "HOURS", red: 230.0, green: 201.0, blue: 37.0, centered: true, fontSize: 12)
-                self.addUILabel(curView, x: x + 200, y: y + 80, width: 75, height: 25, labelText: "MINUTES", red: 230.0, green: 201.0, blue: 37.0, centered: true, fontSize: 12)
-                self.addUILabel(curView, x: x + 300, y: y + 80, width: 75, height: 25, labelText: "SECONDS", red: 230.0, green: 201.0, blue: 37.0, centered: true, fontSize: 12)
+                self.addUILabel(curView, x: x, y: y + 80, width: 75, height: 25, labelText: "DAYS", red: 230.0, green: 201.0, blue: 37.0, fontSize: 12)
+                self.addUILabel(curView, x: x + 100, y: y + 80, width: 75, height: 25, labelText: "HOURS", red: 230.0, green: 201.0, blue: 37.0, fontSize: 12)
+                self.addUILabel(curView, x: x + 200, y: y + 80, width: 75, height: 25, labelText: "MINUTES", red: 230.0, green: 201.0, blue: 37.0, fontSize: 12)
+                self.addUILabel(curView, x: x + 300, y: y + 80, width: 75, height: 25, labelText: "SECONDS", red: 230.0, green: 201.0, blue: 37.0, fontSize: 12)
                 
                 NSTimer.scheduledTimerWithTimeInterval(1.0, target: self, selector: #selector(SuperViewController.changeTimer), userInfo: nil, repeats: true)
             }

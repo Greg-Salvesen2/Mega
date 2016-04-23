@@ -11,11 +11,13 @@ import UIKit
 class ForgotPasswordViewController: SuperViewController {
     
     var emailTextField: UITextField!;
+    var toForgotPasswordConfirmView: Bool!
     
     override func viewDidLoad() {
         super.viewDidLoad();
         
         let width = UIScreen.mainScreen().bounds.size.width
+        toForgotPasswordConfirmView = false
         
         self.view.addBackground(kLoginBackground)
         
@@ -44,14 +46,72 @@ class ForgotPasswordViewController: SuperViewController {
         
         //Send Password Button
         let sendPasswordView: UIView = self.addUIView(self.view, x: (width / 2) - (loginButtonWidth / 2), y: 400, width: loginButtonWidth, height: 65, backgroundRed: 230.0, backgroundGreen: 201.0, backgroundBlue: 37.0, transparency: 255.0, rounded: 30.0)
-        self.addUILabel(sendPasswordView, x: 0, y: 0, width: sendPasswordView.frame.size.width, height: sendPasswordView.frame.size.height, labelText: "SEND PASSWORD", red: 0, green: 0, blue: 0, centered: true, fontSize: kDefaultFontSize)
+        self.addUILabel(sendPasswordView, x: 0, y: 0, width: sendPasswordView.frame.size.width, height: sendPasswordView.frame.size.height, labelText: "SEND PASSWORD")
         sendPasswordView.addGestureRecognizer(sendPasswordGestureRecognizer)
     }
     
     func sendPasswordPressed() {
-        //TODO: Insert code to call the reset password script, handle any errors that may occur
+        let email = emailTextField.text!
         
-        self.segueToNewViewController(kToForgotPasswordConfirm, sender: self)
+        let url = NSURL(string: kURLForgotPassword)
+        let request = NSMutableURLRequest(URL: url!)
+        let postString = "email=\(email)"
+        let session = NSURLSession.sharedSession()
+        request.HTTPMethod = "POST"
+        request.HTTPBody = postString.dataUsingEncoding(NSUTF8StringEncoding)
+        let task = session.dataTaskWithRequest(request, completionHandler: {data, response, error -> Void in
+            //Checks to make sure there are no errors, if there are display an unable to complete server connection error
+            guard error == nil else {
+                dispatch_async(dispatch_get_main_queue(), {
+                    let alert = UIAlertController(title: "Unable to complete server connection", message: "Try checking your internet connection, and trying again.", preferredStyle: .Alert)
+                    alert.addAction(UIAlertAction(title: "Okay", style: UIAlertActionStyle.Default, handler: nil))
+                    self.presentViewController(alert, animated: true, completion: nil)
+                })
+                return
+            }
+            
+            let dataString = String(data: data!, encoding: NSUTF8StringEncoding)!.stringByReplacingOccurrencesOfString("\"", withString: "")
+            if(dataString == "Successfully emailed user") {
+                //If server accepts a successful login, handle the login
+                dispatch_async(dispatch_get_main_queue(), {
+                    self.toForgotPasswordConfirmView = true
+                    self.segueToNewViewController(kToForgotPasswordConfirm, sender: self)
+                })
+            } else if(dataString == "Invalid email address") {
+                //If the server returns an invalid email message, display an invalid email or password error
+                dispatch_async(dispatch_get_main_queue(), {
+                    let alert = UIAlertController(title: "Invalid email", message: "The email you provided is not a valid email address. Please try again.", preferredStyle: .Alert)
+                    alert.addAction(UIAlertAction(title: "Okay", style: UIAlertActionStyle.Default, handler: nil))
+                    self.presentViewController(alert, animated: true, completion: nil)
+                })
+            } else if(dataString == "Email address not found") {
+                //If the server returns an invalid email or password message, display an invalid email or password error
+                dispatch_async(dispatch_get_main_queue(), {
+                    let alert = UIAlertController(title: "Email not found", message: "This email is not associated with any Mega account. Please try again.", preferredStyle: .Alert)
+                    alert.addAction(UIAlertAction(title: "Okay", style: UIAlertActionStyle.Default, handler: nil))
+                    self.presentViewController(alert, animated: true, completion: nil)
+                })
+            } else if(dataString == "Unexpected Error") {
+                //If the server returns an unexpected error message, display an unexpected error
+                dispatch_async(dispatch_get_main_queue(), {
+                    let alert = UIAlertController(title: "Unexpected error", message: "Something went wrong. Sorry about that, try again in a few minutes.", preferredStyle: .Alert)
+                    alert.addAction(UIAlertAction(title: "Okay", style: UIAlertActionStyle.Default, handler: nil))
+                    self.presentViewController(alert, animated: true, completion: nil)
+                })
+            }
+            return
+        })
+        
+        task.resume()
+        
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if(toForgotPasswordConfirmView == true) {
+            let targetViewController = segue.destinationViewController as! ForgotPasswordConfirmViewController
+            
+            targetViewController.email = emailTextField.text
+        }
     }
     
     func backgroundTapped() {

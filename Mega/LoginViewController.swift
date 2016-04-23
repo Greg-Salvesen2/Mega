@@ -93,12 +93,12 @@ class LoginViewController: SuperViewController {
         
         //Forgot Password Label
         let forgotPasswordView: UIView = self.addUIView(self.view, x: width / 2, y: 390, width: textFieldWidth / 2, height: 25)
-        self.addUILabel(forgotPasswordView, x: 0, y: 0, width: forgotPasswordView.frame.size.width, height: forgotPasswordView.frame.size.height, labelText: "Forgot Password?", red: 230.0, green:201.0, blue:37.0, centered: true, fontSize: kDefaultFontSize)
+        self.addUILabel(forgotPasswordView, x: 0, y: 0, width: forgotPasswordView.frame.size.width, height: forgotPasswordView.frame.size.height, labelText: "Forgot Password?", red: 230.0, green:201.0, blue:37.0)
         forgotPasswordView.addGestureRecognizer(forgotGestureRecognizer)
         
         //Login Button
         let loginView: UIView = self.addUIView(self.view, x: (width / 2) - (loginButtonWidth / 2), y: 475, width: loginButtonWidth, height: 65, backgroundRed: 230.0, backgroundGreen: 201.0, backgroundBlue: 37.0, transparency: 255.0, rounded: 30.0)
-        self.addUILabel(loginView, x: 0, y: 0, width: loginView.frame.size.width, height: loginView.frame.size.height, labelText: "LOGIN", red: 0, green: 0, blue: 0, centered: true, fontSize: kDefaultFontSize)
+        self.addUILabel(loginView, x: 0, y: 0, width: loginView.frame.size.width, height: loginView.frame.size.height, labelText: "LOGIN")
         loginView.addGestureRecognizer(loginGestureRecognizer)
         
         //Adds time to next weekly winner
@@ -150,7 +150,6 @@ class LoginViewController: SuperViewController {
         let url = NSURL(string: kURLLogin)
         let request = NSMutableURLRequest(URL: url!)
         let postString = "email=\(email)&password=\(password)"
-        print(postString)
         let session = NSURLSession.sharedSession()
         request.HTTPMethod = "POST"
         request.HTTPBody = postString.dataUsingEncoding(NSUTF8StringEncoding)

@@ -17,6 +17,7 @@ let kURLHeader = "http://www.latenightdesigns.com/mega/"
 let kURLLogin = kURLHeader + "login.php"
 let kURLTimeToNextWeeklyWinner = kURLHeader + "countdown.php"
 let kURLRegister = kURLHeader + "register.php"
+let kURLForgotPassword = kURLHeader + "forgotPassword.php"
 
 //SEGUE NAMES
 let kToLaunch = "toLaunch"
@@ -66,6 +67,8 @@ let kBagCarSelectClose = "Assets/Buttons:Random/MyBagCarSelect-X.png"
 let kPlayButton = "Assets/Buttons:Random/PastWinners-PlayButton.png"
 let kRegisterCheck = "Assets/Buttons:Random/Register-CheckMark.png"
 let kSelectedBall = "Assets/Buttons:Random/SpotTheBall-SelectedBall.png"
+let kTOSCheck = "Assets/Buttons:Random/tos-checked.png"
+let kTOSBox = "Assets/Buttons:Random/tos-unchecked.png"
 
 //Image Placeholders
 let kCarSelectMain = "Assets/Image Placeholder Pre Data Population/CarSelect-Main.png"

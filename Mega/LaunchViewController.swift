@@ -49,10 +49,10 @@ class LaunchViewController: SuperViewController {
         
         // Login and Register Buttons
         let loginView: UIView = self.addUIView(self.view, x: (width / 2) - (buttonWidth / 2), y: 275, width: buttonWidth, height: 60, backgroundRed: 255.0, backgroundGreen: 255.0, backgroundBlue: 255.0, transparency: 255.0, rounded: 30.0)
-        self.addUILabel(loginView, x: 0, y: 0, width: loginView.frame.size.width, height: loginView.frame.size.height, labelText: "LOGIN", red: 0.0, green: 0.0, blue: 0.0, centered: true, fontSize: kDefaultFontSize)
+        self.addUILabel(loginView, x: 0, y: 0, width: loginView.frame.size.width, height: loginView.frame.size.height, labelText: "LOGIN")
         
         let registerView: UIView = self.addUIView(self.view, x: (width / 2) - (buttonWidth / 2), y: 375, width: buttonWidth, height: 60, backgroundRed: 230.0, backgroundGreen: 201.0, backgroundBlue: 37.0, transparency: 255.0, rounded: 30.0)
-        self.addUILabel(registerView, x: 0, y: 0, width: registerView.frame.size.width, height: registerView.frame.size.height, labelText: "REGISTER", red: 0.0, green: 0.0, blue: 0.0, centered: true, fontSize: kDefaultFontSize)
+        self.addUILabel(registerView, x: 0, y: 0, width: registerView.frame.size.width, height: registerView.frame.size.height, labelText: "REGISTER")
         
         loginView.addGestureRecognizer(loginGestureRecognizer)
         registerView.addGestureRecognizer(registerGestureRecognizer)
@@ -69,6 +69,7 @@ class LaunchViewController: SuperViewController {
      Values Modified: None
     */
     override func viewDidAppear(animated: Bool) {
+        goToCurDevPage()
         let defaults = NSUserDefaults.standardUserDefaults()
         
         //If login check is unset, or set to Logged out, do nothing, otherwise send to
@@ -77,6 +78,10 @@ class LaunchViewController: SuperViewController {
             self.segueToNewViewController(kToCarList, sender: self)
             return
         }
+    }
+    
+    func goToCurDevPage() {
+        self.segueToNewViewController("devSegue", sender: self)
     }
     
     /*

@@ -14,7 +14,8 @@ import UIKit
 */
 class RegisterViewController: SuperViewController {
     
-    var emailTextField, passwordTextField: UITextField!;
+    var emailTextField, passwordTextField: UITextField!
+    var tosCheck: UIImageView!
     
     /*
      Name: viewDidLoad
@@ -36,6 +37,8 @@ class RegisterViewController: SuperViewController {
         let backgroundGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(RegisterViewController.backgroundTapped))
         let launchGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(RegisterViewController.goToLaunch))
         let registerGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(RegisterViewController.registerAccount))
+        let TOSGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(RegisterViewController.goToTOS))
+        let checkboxGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(RegisterViewController.checkboxTapped))
         
         self.view.addGestureRecognizer(backgroundGestureRecognizer)
         
@@ -90,9 +93,28 @@ class RegisterViewController: SuperViewController {
         passwordToolBar.sizeToFit()
         passwordTextField.inputAccessoryView = passwordToolBar
         
+        //Setting up TOS label text so that Terms of Use and Privacy Policy are underlined
+        let labelText = "I agree to the Terms of Use\nand Privacy Policy"
+        let attribLabelText: NSMutableAttributedString = NSMutableAttributedString(string: labelText)
+        attribLabelText.addAttributes([NSUnderlineStyleAttributeName: 1], range: NSMakeRange(15, 12))
+        attribLabelText.addAttributes([NSUnderlineStyleAttributeName: 1], range: NSMakeRange(32, 14))
+        
+        //TOS and Privacy Policy checkbox
+        let tosLabelView: UIView = self.addUIView(self.view, x: (width / 2) - (textFieldWidth / 2) + 90, y: 425, width: textFieldWidth - 50, height: 50)
+        self.addUILabel(tosLabelView, x: 0, y: 0, width: tosLabelView.frame.size.width, height: tosLabelView.frame.size.height, attribLabelText: attribLabelText, red: 230.0, green: 201.0, blue: 37.0, centered: false, fontSize: 12.0)
+        tosLabelView.addGestureRecognizer(TOSGestureRecognizer)
+        
+        let tosView = self.addUIView(self.view, x: (width / 2) - (textFieldWidth / 2) + 15, y: 430, width: 30, height: 30)
+        self.addUIImage(tosView, x: 5, y: 5, width: 20, height: 20, filepath: kTOSBox)
+        tosCheck = self.addUIImage(tosView, x: 5, y: 5, width: 25, height: 20, filepath: kTOSCheck)
+        
+        tosCheck.hidden = true
+        
+        tosView.addGestureRecognizer(checkboxGestureRecognizer)
+        
         //Register Button
         let registerView: UIView = self.addUIView(self.view, x: (width / 2) - (loginButtonWidth / 2), y: height - 100, width: loginButtonWidth, height: 65, backgroundRed: 230.0, backgroundGreen: 201.0, backgroundBlue: 37.0, transparency: 255.0, rounded: 30.0)
-        self.addUILabel(registerView, x: 0, y: 0, width: registerView.frame.size.width, height: registerView.frame.size.height, labelText: "CREATE ACCOUNT", red: 0, green: 0, blue: 0, centered: true, fontSize: kDefaultFontSize)
+        self.addUILabel(registerView, x: 0, y: 0, width: registerView.frame.size.width, height: registerView.frame.size.height, labelText: "CREATE ACCOUNT")
         
         registerView.addGestureRecognizer(registerGestureRecognizer)
     }
@@ -111,7 +133,6 @@ class RegisterViewController: SuperViewController {
         let url = NSURL(string: kURLRegister)
         let request = NSMutableURLRequest(URL: url!)
         let postString = "email=\(email)&password=\(password)"
-        print(postString)
         let session = NSURLSession.sharedSession()
         request.HTTPMethod = "POST"
         request.HTTPBody = postString.dataUsingEncoding(NSUTF8StringEncoding)
@@ -127,9 +148,8 @@ class RegisterViewController: SuperViewController {
             }
             
             let dataString = String(data: data!, encoding: NSUTF8StringEncoding)!.stringByReplacingOccurrencesOfString("\"", withString: "")
-            print(dataString)
             if(dataString == "Successfully registered account") {
-                //If server accepts a successful login, handle the login
+                //If server accepts a successful registration, handle the automatic login
                 self.handleLogin()
             } else if(dataString == "Invalid email address") {
                 //If the server returns an invalid email message, display an invalid email or password error
@@ -196,10 +216,25 @@ class RegisterViewController: SuperViewController {
      Inputs: None
      Outputs: None
      Values Modified: None
-    */
+     */
     func backgroundTapped() {
         emailTextField.resignFirstResponder()
         passwordTextField.resignFirstResponder()
+    }
+    
+    /*
+     Name: checkboxTapped
+     Purpose: Deactivates the email and password text fields, to close the keyboard.
+     Inputs: None
+     Outputs: None
+     Values Modified: None
+     */
+    func checkboxTapped() {
+        if(tosCheck.hidden) {
+            tosCheck.hidden = false
+        } else {
+            tosCheck.hidden = true
+        }
     }
     
     /*
@@ -208,9 +243,20 @@ class RegisterViewController: SuperViewController {
      Inputs: None
      Outputs: None
      Values Modified: None
-    */
+     */
     func goToLaunch() {
         self.segueToNewViewController(kToLaunch, sender: self)
+    }
+    
+    /*
+     Name: goToTOS
+     Purpose: Sends user to TOSViewController
+     Inputs: None
+     Outputs: None
+     Values Modified: None
+     */
+    func goToTOS() {
+        self.segueToNewViewController(kToTOS, sender: self)
     }
     
     /*
